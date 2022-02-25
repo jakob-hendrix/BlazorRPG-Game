@@ -13,10 +13,29 @@ namespace SimpleRPG.Game.Engine.Tests.ViewModels
         [Fact]
         public void CreateSimpleGameSession()
         {
-            var sut = new GameSession();
+            // arrange
 
-            Assert.Equal("Anomen",sut.CurrentPlayer.Name);
-            Assert.Equal(1000,sut.CurrentPlayer.Gold);
+            // act
+            var vm = new GameSession();
+
+            // assert
+            Assert.NotNull(vm);
+            Assert.NotNull(vm.CurrentPlayer);
+            Assert.Equal("Anomen", vm.CurrentPlayer.Name);
+            Assert.Equal("Paladin", vm.CurrentPlayer.CharacterClass);
+            Assert.Equal(10, vm.CurrentPlayer.HitPoints);
+            Assert.Equal(1000, vm.CurrentPlayer.Gold);
+            Assert.Equal(0, vm.CurrentPlayer.ExperiencePoints);
+            Assert.Equal(1, vm.CurrentPlayer.Level);
+        }
+
+        [Fact]
+        public void AddXP()
+        {
+            var vm = new GameSession();
+            vm.AddXP();
+
+            Assert.Equal(10, vm.CurrentPlayer.ExperiencePoints);
         }
     }
 }
