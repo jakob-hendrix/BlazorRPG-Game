@@ -4,7 +4,11 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
+
+env:
+  DOTNET_VERSION: '3.1.x'
+  CONFIGURATION: 'Release'
+  PROJECT_ROOT: 'simple-rpg-game'
 
 jobs:
   build:
@@ -16,10 +20,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ${{ env.PROJECT_ROOT }}/
+
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ${{ env.PROJECT_ROOT }}/ --no-restore --configuration ${{ env.CONFIGURATION }}
+
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ${{ env.PROJECT_ROOT }}/ --no-build --verbosity normal
