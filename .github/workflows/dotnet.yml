@@ -26,7 +26,7 @@ jobs:
       run: dotnet restore simple-rpg-game/
 
     - name: Build
-      run: dotnet build --no-restore --configuration ${{ env.CONFIGURATION }}
+      run: dotnet build simple-rpg-game/ --no-restore --configuration ${{ env.CONFIGURATION }}
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
