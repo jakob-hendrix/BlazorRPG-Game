@@ -23,7 +23,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Restore dependencies
-      run: dotnet restore ./simple-rpg-game.sln
+      run: dotnet restore simple-rpg-game/
 
     - name: Build
       run: dotnet build --no-restore --configuration ${{ env.CONFIGURATION }}
