@@ -11,8 +11,17 @@ namespace SimpleRPG.Game.Engine.ViewModels
             CurrentPlayer = new Player
             {
                 Name = "Anomen",
-                Gold = 1000
+                CharacterClass = "Paladin",
+                HitPoints = 10,
+                Gold = 1000,
+                ExperiencePoints = 0,
+                Level = 1
             };
+        }
+
+        public void AddXP()
+        {
+            CurrentPlayer.ExperiencePoints += 10;
         }
     }
 }
