@@ -43,7 +43,7 @@ namespace SimpleRPG.Game.Tests
             cut.Find(".navbar-toggler").Click();
 
             // assert
-            var expected = @"<div class="""" blazor:onclick=""2"">";
+            var expected = @"<div blazor:onclick=""2"">";
             Assert.Contains(expected, cut.Markup);
         }
     }
