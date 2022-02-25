@@ -9,6 +9,7 @@ on:
 env:
   DOTNET_VERSION: '3.1.x'
   CONFIGURATION: 'Release'
+  PROJECT_ROOT: 'simple-rpg-game'
 
 jobs:
   build:
@@ -23,10 +24,10 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Restore dependencies
-      run: dotnet restore simple-rpg-game/
+      run: dotnet restore ${{ env.PROJECT_ROOT }}/
 
     - name: Build
-      run: dotnet build simple-rpg-game/ --no-restore --configuration ${{ env.CONFIGURATION }}
+      run: dotnet build ${{ env.PROJECT_ROOT }}/ --no-restore --configuration ${{ env.CONFIGURATION }}
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ${{ env.PROJECT_ROOT }}/ --no-build --verbosity normal
