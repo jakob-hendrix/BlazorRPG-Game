@@ -1,4 +1,6 @@
 ﻿using Bunit;
+using Microsoft.Extensions.DependencyInjection;
+using SimpleRPG.Game.Engine.ViewModels;
 using SimpleRPG.Game.Pages;
 using SimpleRPG.Game.Tests.Mocks;
 using Xunit;
@@ -7,12 +9,15 @@ namespace SimpleRPG.Game.Tests.Pages
 {
     public class MainScreenTests
     {
+        private readonly GameSession session = new MockGameSession();
+
         [Fact]
         public void SimpleRender()
         {
             // arrange
             using var ctx = new TestContext();
             ctx.Services.AddBlazoriseServices();
+            ctx.Services.AddSingleton<GameSession>(session);
 
             // act
             var cut = ctx.RenderComponent<MainScreen>();
