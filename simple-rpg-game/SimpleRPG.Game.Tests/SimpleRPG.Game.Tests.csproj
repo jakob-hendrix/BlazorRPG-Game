@@ -24,4 +24,8 @@
     <ProjectReference Include="..\SimpleRPG.Game\SimpleRPG.Game.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Shared\" />
+  </ItemGroup>
+
 </Project>
