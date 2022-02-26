@@ -61,7 +61,7 @@ namespace SimpleRPG.Game
              *      it receives a new instance of the service.
              */
 
-            services.AddSingleton<GameSession>();
+            services.AddSingleton<IGameSession, GameSession>();
         }
 
         private static void InitializeAppServices(IServiceProvider services)
