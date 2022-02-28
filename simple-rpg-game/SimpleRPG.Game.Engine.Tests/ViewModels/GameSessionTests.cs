@@ -27,17 +27,8 @@ namespace SimpleRPG.Game.Engine.Tests.ViewModels
             Assert.Equal("Home", vm.CurrentLocation.Name);
             Assert.Equal(0, vm.CurrentLocation.XCoordinate);
             Assert.Equal(-1, vm.CurrentLocation.YCoordinate);
-            Assert.Equal("This is your house.", vm.CurrentLocation.Description);
-            Assert.Equal("/images/locations/home.png", vm.CurrentLocation.ImageName);
-        }
-
-        [Fact]
-        public void AddXP()
-        {
-            var vm = new GameSession();
-            vm.AddXP();
-
-            Assert.Equal(10, vm.CurrentPlayer.ExperiencePoints);
+            Assert.Equal("This is your home.", vm.CurrentLocation.Description);
+            Assert.Equal("/images/locations/Home.png", vm.CurrentLocation.ImageName);
         }
     }
 }
