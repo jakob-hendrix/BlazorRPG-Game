@@ -1,4 +1,5 @@
-﻿using SimpleRPG.Game.Engine.Models;
+﻿using SimpleRPG.Game.Engine.Factories;
+using SimpleRPG.Game.Engine.Models;
 
 namespace SimpleRPG.Game.Engine.ViewModels
 {
@@ -6,6 +7,7 @@ namespace SimpleRPG.Game.Engine.ViewModels
     {
         public Player CurrentPlayer { get; private set; }
 
+        public World CurrentWorld { get; set; }
         public Location CurrentLocation { get; private set; }
 
         public GameSession()
@@ -20,14 +22,8 @@ namespace SimpleRPG.Game.Engine.ViewModels
                 Level = 1
             };
 
-            CurrentLocation = new Location
-            {
-                Name = "Home",
-                XCoordinate = 0,
-                YCoordinate = -1,
-                Description = "This is your house.",
-                ImageName = "/images/locations/home.png"
-            };
+            CurrentWorld = WorldFactory.CreateWorld();
+            CurrentLocation = CurrentWorld.GetHomeLocation();
         }
 
         public void AddXP()
