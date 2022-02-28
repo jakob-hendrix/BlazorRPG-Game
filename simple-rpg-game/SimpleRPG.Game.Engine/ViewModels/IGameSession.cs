@@ -4,8 +4,9 @@ namespace SimpleRPG.Game.Engine.ViewModels
 {
     public interface IGameSession
     {
-        Player CurrentPlayer { get;  }
+        Player CurrentPlayer { get; }
         Location CurrentLocation { get; }
-        void AddXP();
+        MovementUnit Movement { get; }
+        void OnLocationChanged(Location location);
     }
 }

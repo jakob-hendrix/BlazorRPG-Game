@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleRPG.Game", "SimpleRPG
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleRPG.Game.Tests", "SimpleRPG.Game.Tests\SimpleRPG.Game.Tests.csproj", "{818F424D-98D2-4D69-AA2F-248FF1FFFC93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleRPG.Game.Engine", "SimpleRPG.Game.Engine\SimpleRPG.Game.Engine.csproj", "{0D51DC35-ADDC-41DE-952F-DC52BFEA8846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleRPG.Game.Engine", "SimpleRPG.Game.Engine\SimpleRPG.Game.Engine.csproj", "{0D51DC35-ADDC-41DE-952F-DC52BFEA8846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleRPG.Game.Engine.Tests", "SimpleRPG.Game.Engine.Tests\SimpleRPG.Game.Engine.Tests.csproj", "{85F1D4AC-B5BF-43FF-9CD9-ADAA06777B4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleRPG.Game.Engine.Tests", "SimpleRPG.Game.Engine.Tests\SimpleRPG.Game.Engine.Tests.csproj", "{85F1D4AC-B5BF-43FF-9CD9-ADAA06777B4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

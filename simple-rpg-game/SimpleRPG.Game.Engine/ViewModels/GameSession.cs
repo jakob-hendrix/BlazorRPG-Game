@@ -5,10 +5,13 @@ namespace SimpleRPG.Game.Engine.ViewModels
 {
     public class GameSession : IGameSession
     {
+        private readonly World currentWorld;
+
         public Player CurrentPlayer { get; private set; }
 
-        public World CurrentWorld { get; set; }
         public Location CurrentLocation { get; private set; }
+
+        public MovementUnit Movement { get; private set; }
 
         public GameSession()
         {
@@ -22,13 +25,14 @@ namespace SimpleRPG.Game.Engine.ViewModels
                 Level = 1
             };
 
-            CurrentWorld = WorldFactory.CreateWorld();
-            CurrentLocation = CurrentWorld.GetHomeLocation();
+            // init game world
+            currentWorld = WorldFactory.CreateWorld();
+
+            Movement = new MovementUnit(currentWorld);
+            CurrentLocation = Movement.CurrentLocation;
         }
 
-        public void AddXP()
-        {
-            CurrentPlayer.ExperiencePoints += 10;
-        }
+        public void OnLocationChanged(Location location) => 
+            CurrentLocation = location;
     }
 }
