@@ -10,7 +10,6 @@ namespace SimpleRPG.Game.Engine.Models
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
         public int Gold { get; set; }
-        public IList<GameItem> Inventory { get; } = new List<GameItem>();
-
+        public Inventory Inventory { get; } = new Inventory();
     }
 }

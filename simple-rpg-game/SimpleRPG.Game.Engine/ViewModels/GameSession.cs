@@ -31,19 +31,9 @@ namespace SimpleRPG.Game.Engine.ViewModels
             Movement = new MovementUnit(currentWorld);
             CurrentLocation = Movement.CurrentLocation;
 
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-        }
+            CurrentPlayer.Inventory.AddItem(ItemFactory.CreateGameItem(1001));
+            CurrentPlayer.Inventory.AddItem(ItemFactory.CreateGameItem(1001));
+          }
 
         public void OnLocationChanged(Location location) => 
             CurrentLocation = location;

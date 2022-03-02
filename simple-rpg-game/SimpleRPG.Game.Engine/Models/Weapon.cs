@@ -9,7 +9,7 @@ namespace SimpleRPG.Game.Engine.Models
     public class Weapon : GameItem
     {
         public Weapon(int itemTypeID, string name, int price, int minimumDamage, int maximumDamage)
-            : base(itemTypeID, name, price)
+            : base(itemTypeID, name, price, true)
         {
             MinimumDamage = minimumDamage;
             MaximumDamage = maximumDamage;
