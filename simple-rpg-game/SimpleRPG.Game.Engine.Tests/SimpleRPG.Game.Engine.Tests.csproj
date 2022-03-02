@@ -17,4 +17,8 @@
     <ProjectReference Include="..\SimpleRPG.Game.Engine\SimpleRPG.Game.Engine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
