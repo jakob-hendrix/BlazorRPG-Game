@@ -19,7 +19,7 @@ namespace SimpleRPG.Game.Engine.ViewModels
             {
                 Name = "CHARNAME",
                 CharacterClass = "Mook",
-                HitPoints = 10,
+                CurrentHitPoints = 10,
                 Gold = 1000,
                 ExperiencePoints = 0,
                 Level = 1

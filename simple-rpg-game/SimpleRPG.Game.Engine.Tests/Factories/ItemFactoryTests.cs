@@ -1,4 +1,5 @@
 ﻿using SimpleRPG.Game.Engine.Factories;
+using System;
 using Xunit;
 
 namespace SimpleRPG.Game.Engine.Tests.Factories
@@ -26,10 +27,9 @@ namespace SimpleRPG.Game.Engine.Tests.Factories
             // arrange
 
             // act
-            var item = ItemFactory.CreateGameItem(1);
+            Assert.Throws<ArgumentOutOfRangeException>(() => ItemFactory.CreateGameItem(1));
 
             // assert
-            Assert.Null(item);
         }
     }
 }

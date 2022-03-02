@@ -21,7 +21,7 @@ namespace SimpleRPG.Game.Tests.Pages
                        Name = "TestPlayer",
                        CharacterClass = "TestClass",
                        Level = 1,
-                       HitPoints = 8,
+                       CurrentHitPoints = 8
                    });
         }
     }

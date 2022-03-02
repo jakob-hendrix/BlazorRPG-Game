@@ -29,7 +29,7 @@ namespace SimpleRPG.Game.Engine.Services
 
         public IDieRollTracker? RollTracker { get; private set; } = null;
 
-        public void Configure(IDiceService.RollerType rollerType, bool enableTracker = false)
+        public void Configure(IDiceService.RollerType rollerType, bool enableTracker = false, int constantValue = 1)
         {
             RollTracker = enableTracker ? new DieRollTracker() : null;
 
@@ -39,6 +39,7 @@ namespace SimpleRPG.Game.Engine.Services
                 IDiceService.RollerType.Random => new RandomDieRoller(RollTracker),
                 IDiceService.RollerType.Crypto => new CryptoDieRoller(RollTracker),
                 IDiceService.RollerType.MathNet => new MathNetDieRoller(RollTracker),
+                IDiceService.RollerType.Constant => new ConstantDieRoller(constantValue),
                 _ => throw new ArgumentOutOfRangeException(nameof(rollerType))
             };
         }
