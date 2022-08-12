@@ -17,7 +17,7 @@ namespace SimpleRPG.Game.Engine.Services
         IDiceConfiguration Configuration { get; }
         IDieRollTracker? RollTracker { get; }
         void Configure(RollerType rollerType, bool enableTracker = false, int constantValue = 1);
-        DiceResult Roll();
         DiceResult Roll(string diceNotation);
+        DiceResult Roll(int sides, int numDice = 1, int modifier = 0);
     }
 }

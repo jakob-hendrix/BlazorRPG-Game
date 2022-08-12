@@ -1,4 +1,6 @@
-﻿using SimpleRPG.Game.Engine.ViewModels;
+﻿using System.Threading.Tasks;
+using SimpleRPG.Game.Engine.Models;
+using SimpleRPG.Game.Engine.ViewModels;
 using Xunit;
 
 namespace SimpleRPG.Game.Engine.Tests.ViewModels
@@ -29,6 +31,22 @@ namespace SimpleRPG.Game.Engine.Tests.ViewModels
             Assert.Equal(-1, vm.CurrentLocation.YCoordinate);
             Assert.Equal("This is your home.", vm.CurrentLocation.Description);
             Assert.Equal("/images/locations/Home.png", vm.CurrentLocation.ImageName);
+        }
+
+        [Fact]
+        public void GetMonsterAtLocation()
+        {
+            // arrange
+            var vm = new GameSession();
+            var loc = new Location(10, 10, "MockLoc", "MockDesc", "test.png");
+            loc.AddMonsterEncounter(1, 100);
+
+            // act
+            vm.OnLocationChanged(loc);
+
+            // assert
+            Assert.True(vm.HasMonster);
+            Assert.NotNull(vm.CurrentMonster);
         }
     }
 }

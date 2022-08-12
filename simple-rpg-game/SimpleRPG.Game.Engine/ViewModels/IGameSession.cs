@@ -6,6 +6,8 @@ namespace SimpleRPG.Game.Engine.ViewModels
     {
         Player CurrentPlayer { get; }
         Location CurrentLocation { get; }
+        Monster? CurrentMonster { get; }
+        bool HasMonster { get; }
         MovementUnit Movement { get; }
         void OnLocationChanged(Location location);
     }

@@ -9,7 +9,7 @@ namespace SimpleRPG.Game.Engine.Services
         private static readonly IDiceService _instance = new DiceService();
 
         /// <summary>
-        /// Make constructor private to implement singletone pattern.
+        /// Make constructor private to implement singleton pattern.
         /// </summary>
         private DiceService()
         {
@@ -33,7 +33,7 @@ namespace SimpleRPG.Game.Engine.Services
         {
             RollTracker = enableTracker ? new DieRollTracker() : null;
 
-            // NOTE: cool new switch assigment syntax
+            // NOTE: cool new switch assignment syntax
             DieRoller = rollerType switch
             {
                 IDiceService.RollerType.Random => new RandomDieRoller(RollTracker),
@@ -46,5 +46,12 @@ namespace SimpleRPG.Game.Engine.Services
 
         public DiceResult Roll() => Dice.Roll(DieRoller);
         public DiceResult Roll(string diceNotation) => Dice.Roll(diceNotation, DieRoller);
+
+        public DiceResult Roll(int sides, int numDice = 1, int modifier = 0)
+        {
+            var result = Dice.Dice(sides, numDice).Constant(modifier).Roll(DieRoller);
+            Dice.Clear();
+            return result;
+        }
     }
 }

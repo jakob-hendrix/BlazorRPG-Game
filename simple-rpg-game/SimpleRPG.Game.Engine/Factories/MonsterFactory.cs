@@ -8,9 +8,9 @@ namespace SimpleRPG.Game.Engine.Factories
     {
         private static readonly IDiceService _service = DiceService.Instance;
 
-        public static Monster GetMonster(int monsterID)
+        public static Monster GetMonster(int monsterId)
         {
-            switch (monsterID)
+            switch (monsterId)
             {
                 case 1:
                     Monster snake = new Monster
@@ -58,7 +58,7 @@ namespace SimpleRPG.Game.Engine.Factories
                     return giantSpider;
 
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(monsterID));
+                    throw new ArgumentOutOfRangeException(nameof(monsterId));
             }
         }
 

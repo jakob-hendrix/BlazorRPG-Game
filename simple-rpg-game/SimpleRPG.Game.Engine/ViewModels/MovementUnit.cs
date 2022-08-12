@@ -41,11 +41,11 @@ namespace SimpleRPG.Game.Engine.ViewModels
         public void MoveWest() =>
             MoveBase(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
 
-        private void MoveBase(int xCorridate, int yCoordinate)
+        private void MoveBase(int xCoord, int yCoord)
         {
-            if (_world.HasLocationAt(xCorridate, yCoordinate))
+            if (_world.HasLocationAt(xCoord, yCoord))
             {
-                CurrentLocation = _world.LocationAt(xCorridate, yCoordinate);
+                CurrentLocation = _world.LocationAt(xCoord, yCoord);
                 LocationChanged.InvokeAsync(CurrentLocation);
             }
         }

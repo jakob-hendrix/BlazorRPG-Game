@@ -55,6 +55,7 @@ namespace SimpleRPG.Game.Engine.Factories
                     YCoordinate = 0,
                     Name = "Town Gate",
                     Description = "There is a gate here, protecting the town from giant spiders.",
+
                     ImageName = "/images/locations/TownGate.png"
                 },
                 new Location
@@ -83,7 +84,14 @@ namespace SimpleRPG.Game.Engine.Factories
                 },
             };
 
-            return new World(locations);
+            var newWorld = new World(locations);
+
+            // Populate monsters in our world
+            newWorld.LocationAt(-2, -1).AddMonsterEncounter(2, 100);
+            newWorld.LocationAt(2, 0).AddMonsterEncounter(3, 100);
+            newWorld.LocationAt(0, 2).AddMonsterEncounter(1, 100);
+
+            return newWorld;
         }
     }
 }
